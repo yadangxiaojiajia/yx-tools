@@ -153,7 +153,7 @@ func (r *IPRanges) chooseIPv6() {
 func loadIPRanges() []*net.IPAddr {
 	ranges := newIPRanges()
 	if IPText != "" { // 从参数中获取 IP 段数据
-		IPs := strings.Split(IPText, ",") // 以逗号分隔为数组并循环遍历
+		IPs := strings.Split(IPText, "\n") // 以逗号分隔为数组并循环遍历
 		for _, IP := range IPs {
 			IP = strings.TrimSpace(IP) // 去除首尾的空白字符（空格、制表符、换行符等）
 			if IP == "" {              // 跳过空的（即开头、结尾或连续多个 ,, 的情况）
